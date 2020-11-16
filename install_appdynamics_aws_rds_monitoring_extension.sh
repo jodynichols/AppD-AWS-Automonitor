@@ -77,7 +77,7 @@ Usage:
           'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY'.
 
 
-    [root]# export appd_aws_rds_extension_includeDBIdentifiers="*"       # [optional] includeDBIdentifiers (defaults to '*').
+    [root]# export appd_aws_rds_extension_includeDBIdentifiers=".*"       # [optional] includeDBIdentifiers (defaults to '*').
     [root]# export appd_aws_rds_extension_display_account_name=""       # [optional] account name to display (defaults to '').
     [root]# export appd_aws_rds_extension_aws_regions="region1 region2" # [optional] whitespace separated list of aws regions to monitor
                                                                         #            (defaults to 'us-east-1').
