@@ -121,15 +121,21 @@ if [ -n "$appd_aws_ec2_extension_cloudwatch_monitoring" ]; then
 fi
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # set appdynamics aws rds monitoring extension installation variables. -----------------------------
 appd_aws_rds_extension_monitors_path="${appd_home}/${appd_machine_agent_home}/monitors"
 appd_aws_rds_extension_folder="AWSRDSMonitor"
 appd_aws_rds_extension_binary="AWSRDSMonitor-${appd_aws_rds_extension_release}.zip"
 =======
+=======
+>>>>>>> parent of dd84e86... Update install_al2_appdynamics_aws_ec2_monitoring_extension.sh
 # set appdynamics aws ec2 monitoring extension installation variables. -----------------------------
 appd_aws_ec2_extension_monitors_path="${appd_home}/${appd_machine_agent_home}/monitors"
 appd_aws_ec2_extension_folder="AWSEC2Monitor"
 appd_aws_ec2_extension_binary="awsec2monitor-${appd_aws_ec2_extension_release}.zip"
+<<<<<<< HEAD
+>>>>>>> parent of dd84e86... Update install_al2_appdynamics_aws_ec2_monitoring_extension.sh
+=======
 >>>>>>> parent of dd84e86... Update install_al2_appdynamics_aws_ec2_monitoring_extension.sh
 
 # install appdynamics aws ec2 monitoring extension. ------------------------------------------------
@@ -154,6 +160,7 @@ chown -R ${appd_machine_agent_user}:${appd_machine_agent_user} .
 cd ${appd_aws_ec2_extension_folder}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # configure appdynamics aws rds monitoring extension. ----------------------------------------------
 if [ "$appd_aws_rds_extension_config" == "true" ]; then
   # set appdynamics aws rds monitoring extension configuration variables.
@@ -162,6 +169,8 @@ if [ "$appd_aws_rds_extension_config" == "true" ]; then
   appd_aws_rds_extension_path="${appd_aws_rds_extension_monitors_path}/${appd_aws_rds_extension_folder}"
   appd_aws_rds_extension_config_file="config.yml"
 =======
+=======
+>>>>>>> parent of dd84e86... Update install_al2_appdynamics_aws_ec2_monitoring_extension.sh
 # configure appdynamics aws ec2 monitoring extension. ----------------------------------------------
 if [ "$appd_aws_ec2_extension_config" == "true" ]; then
   # set appdynamics aws ec2 monitoring extension configuration variables.
@@ -169,6 +178,9 @@ if [ "$appd_aws_ec2_extension_config" == "true" ]; then
   appd_aws_ec2_extension_folder="AWSEC2Monitor"
   appd_aws_ec2_extension_path="${appd_aws_ec2_extension_monitors_path}/${appd_aws_ec2_extension_folder}"
   appd_aws_ec2_extension_config_file="config.yml"
+<<<<<<< HEAD
+>>>>>>> parent of dd84e86... Update install_al2_appdynamics_aws_ec2_monitoring_extension.sh
+=======
 >>>>>>> parent of dd84e86... Update install_al2_appdynamics_aws_ec2_monitoring_extension.sh
 
   cd ${appd_aws_ec2_extension_path}
