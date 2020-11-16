@@ -125,7 +125,7 @@ fi
 
 # set appdynamics aws rds monitoring extension installation variables. -----------------------------
 appd_aws_rds_extension_monitors_path="${appd_home}/${appd_machine_agent_home}/monitors"
-appd_aws_rds_extension_folder="AWSrdsMonitor"
+appd_aws_rds_extension_folder="AWSRDSMonitor"
 appd_aws_rds_extension_binary="awsrdsmonitor-${appd_aws_rds_extension_release}.zip"
 
 # install appdynamics aws rds monitoring extension. ------------------------------------------------
@@ -153,7 +153,7 @@ cd ${appd_aws_rds_extension_folder}
 if [ "$appd_aws_rds_extension_config" == "true" ]; then
   # set appdynamics aws rds monitoring extension configuration variables.
   appd_aws_rds_extension_monitors_path="${appd_home}/${appd_machine_agent_home}/monitors"
-  appd_aws_rds_extension_folder="AWSrdsMonitor"
+  appd_aws_rds_extension_folder="AWSRDSMonitor"
   appd_aws_rds_extension_path="${appd_aws_rds_extension_monitors_path}/${appd_aws_rds_extension_folder}"
   appd_aws_rds_extension_config_file="config.yml"
 
