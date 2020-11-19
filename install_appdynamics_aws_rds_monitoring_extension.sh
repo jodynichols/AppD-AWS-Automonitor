@@ -37,7 +37,7 @@ appd_aws_rds_extension_includeDBIdentifiers="${appd_aws_rds_extension_includeDBI
 appd_aws_rds_extension_display_account_name="${appd_aws_rds_extension_display_account_name:-}"
 appd_aws_rds_extension_aws_regions="${appd_aws_rds_extension_aws_regions:-us-east-1}"
 appd_aws_rds_extension_cloudwatch_monitoring="${appd_aws_rds_extension_cloudwatch_monitoring:-Basic}"
-appd_aws_rds_extension_tier_component_id="${appd_aws_rds_extension_tier_component_id:-8}"
+#appd_aws_rds_extension_tier_component_id="${appd_aws_rds_extension_tier_component_id:-8}"
 appd_machine_agent_application_name="${appd_machine_agent_application_name:-}"
 appd_machine_agent_tier_name="${appd_machine_agent_tier_name:-}"
 appd_machine_agent_node_name="${appd_machine_agent_node_name:-}"
@@ -171,6 +171,7 @@ if [ "$appd_aws_rds_extension_config" == "true" ]; then
 
   # use the stream editor to substitute the new values.
   sed -i -e "/^metricPrefix: \"Server|Component:/s/^.*$/metricPrefix: \"Custom Metrics|Amazon RDS|\"/" ${appd_aws_rds_extension_config_file}
+
 
   set +x    # temporarily turn command display OFF.
   sed -i -e "/^  - awsAccessKey:/s/^.*$/  - awsAccessKey: \"${AWS_ACCESS_KEY_ID}\"/" ${appd_aws_rds_extension_config_file}
