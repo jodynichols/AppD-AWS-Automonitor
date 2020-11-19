@@ -33,7 +33,7 @@ appd_aws_rds_extension_build="${appd_aws_rds_extension_build:-1602566706}"
 
 # [OPTIONAL] appdynamics aws rds monitoring extension config parameters [w/ defaults].
 appd_aws_rds_extension_config="${appd_aws_rds_extension_config:-true}"
-appd_aws_rds_extension_includeDBIdentifiers="${appd_aws_rds_extension_includeDBIdentifiers:-*}"
+appd_aws_rds_extension_includeDBIdentifiers="${appd_aws_rds_extension_includeDBIdentifiers:-[.*]}"
 appd_aws_rds_extension_display_account_name="${appd_aws_rds_extension_display_account_name:-}"
 appd_aws_rds_extension_aws_regions="${appd_aws_rds_extension_aws_regions:-us-east-1}"
 appd_aws_rds_extension_cloudwatch_monitoring="${appd_aws_rds_extension_cloudwatch_monitoring:-Basic}"
@@ -170,7 +170,7 @@ if [ "$appd_aws_rds_extension_config" == "true" ]; then
   fi
 
   # use the stream editor to substitute the new values.
-  sed -i -e "/^metricPrefix: \"Server|Component:/s/^.*$/metricPrefix: \"Server|Component:${appd_aws_rds_extension_tier_component_id}|Custom Metrics|Amazon RDS|\"/" ${appd_aws_rds_extension_config_file}
+  sed -i -e "/^metricPrefix: \"Server|Component:/s/^.*$/metricPrefix: \"Custom Metrics|Amazon RDS|\"/" ${appd_aws_rds_extension_config_file}
 
   set +x    # temporarily turn command display OFF.
   sed -i -e "/^  - awsAccessKey:/s/^.*$/  - awsAccessKey: \"${AWS_ACCESS_KEY_ID}\"/" ${appd_aws_rds_extension_config_file}
