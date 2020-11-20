@@ -33,7 +33,7 @@ appd_aws_rds_extension_build="${appd_aws_rds_extension_build:-1602566706}"
 
 # [OPTIONAL] appdynamics aws rds monitoring extension config parameters [w/ defaults].
 appd_aws_rds_extension_config="${appd_aws_rds_extension_config:-true}"
-appd_aws_rds_extension_includeDBIdentifiers="${appd_aws_rds_extension_includeDBIdentifiers:-[.*]}"
+appd_aws_rds_extension_includeDBIdentifiers="${appd_aws_rds_extension_includeDBIdentifiers:-[\".*\"]}"
 appd_aws_rds_extension_display_account_name="${appd_aws_rds_extension_display_account_name:-NTT}"
 appd_aws_rds_extension_aws_regions="${appd_aws_rds_extension_aws_regions:-us-east-1}"
 appd_aws_rds_extension_cloudwatch_monitoring="${appd_aws_rds_extension_cloudwatch_monitoring:-Basic}"
@@ -189,7 +189,7 @@ if [ "$appd_aws_rds_extension_config" == "true" ]; then
 
   sed -i -e "/^cloudWatchMonitoring:/s/^.*$/cloudWatchMonitoring: \"${appd_aws_rds_extension_cloudwatch_monitoring}\"/" ${appd_aws_rds_extension_config_file}
 
-  sed -i -e "/^includeDBIdentifiers:/s/^.*$/includeDBIdentifiers: \"${appd_aws_rds_extension_includeDBIdentifiers}\"/" ${appd_aws_rds_extension_config_file}
+  sed -i -e "/^includeDBIdentifiers:/s/^.*$/includeDBIdentifiers: ${appd_aws_rds_extension_includeDBIdentifiers}/" ${appd_aws_rds_extension_config_file}
 
 
   # add 'eu-west-2' and 'eu-west-3' as a region endpoints. (it is curently missing in release 2.1.3.)
