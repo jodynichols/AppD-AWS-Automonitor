@@ -34,7 +34,7 @@ appd_aws_rds_extension_build="${appd_aws_rds_extension_build:-1602566706}"
 # [OPTIONAL] appdynamics aws rds monitoring extension config parameters [w/ defaults].
 appd_aws_rds_extension_config="${appd_aws_rds_extension_config:-true}"
 appd_aws_rds_extension_includeDBIdentifiers="${appd_aws_rds_extension_includeDBIdentifiers:-[.*]}"
-appd_aws_rds_extension_display_account_name="${appd_aws_rds_extension_display_account_name:-}"
+appd_aws_rds_extension_display_account_name="${appd_aws_rds_extension_display_account_name:-NTT}"
 appd_aws_rds_extension_aws_regions="${appd_aws_rds_extension_aws_regions:-us-east-1}"
 appd_aws_rds_extension_cloudwatch_monitoring="${appd_aws_rds_extension_cloudwatch_monitoring:-Basic}"
 #appd_aws_rds_extension_tier_component_id="${appd_aws_rds_extension_tier_component_id:-8}"
