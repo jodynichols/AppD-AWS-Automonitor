@@ -281,24 +281,6 @@ if [ "$appd_machine_agent_config" == "true" ]; then
     cp -p ${appd_agent_config_file} ${appd_agent_config_file}.orig
   fi
 
-  # retrieve account access key from controller rest api if server is running.
-  controller_url="http://${appd_controller_host}:${appd_controller_port}/controller/rest/serverstatus"
-  controller_status=$(curl --silent --connect-timeout 10 ${controller_url} | awk '/available/ {print $0}' | awk -F ">" '{print $2}' | awk -F "<" '{print $1}')
-
-  # if server is available, retrieve access key. otherwise, use default <placeholder_value>.
-  if [ "$controller_status" == "true" ]; then
-    # build account info url to retrieve access key.
-    access_key_path="api/accounts/accountinfo?accountname=${appd_machine_agent_account_name}"
-    access_key_url="http://${appd_controller_host}:${appd_controller_port}/${access_key_path}"
-
-    # retrieve the account access key from the returned json string.
-    set +x    # temporarily turn command display OFF.
-    controller_credentials="--user root@system:${appd_controller_root_password}"
-    access_key_record=$(curl --silent ${controller_credentials} ${access_key_url} | awk 'match($0,"accessKey") {print substr($0,RSTART-1,length($0)-2)}')
-    set -x    # turn command display back ON.
-    appd_machine_agent_account_access_key=$(echo ${access_key_record} | awk -F '"' '/accessKey/ {print $4}')
-  fi
-
   # use the stream editor to substitute the new values.
   sed -i -e "/^    <controller-host>/s/^.*$/    <controller-host>${appd_controller_host}<\/controller-host>/" ${appd_agent_config_file}
   sed -i -e "/^    <controller-port>/s/^.*$/    <controller-port>${appd_controller_port}<\/controller-port>/" ${appd_agent_config_file}

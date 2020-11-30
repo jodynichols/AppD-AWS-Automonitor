@@ -23,6 +23,7 @@ export appd_machine_agent_controller_ssl_enabled="true"
 export appd_machine_agent_account_access_key="<YOUR KEY HERE>"
 export appd_machine_agent_account_name="<YOUR CUSTOMER NAME HERE>"
 export appd_machine_agent_config="true"
+export appd_machine_agent_user="centos"
 
 #----- FOR EXTENSION -----
 export AWS_ACCESS_KEY_ID="<YOUR ACCESS KEY HERE>"
